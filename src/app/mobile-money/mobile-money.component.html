@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-content>
+    <ion-item button (click)="go('deposit')">
+      Dépôt
+      <ion-icon name="arrow-forward-circle-outline" slot="end"></ion-icon>
+    </ion-item>
+    <ion-item button (click)="go('withdraw')">
+      Retrait
+      <ion-icon name="arrow-forward-circle-outline" slot="end"></ion-icon>
+    </ion-item>
+    <ion-item button (click)="go('transfer')">
+      Transfer
+      <ion-icon name="arrow-forward-circle-outline" slot="end"></ion-icon>
+    </ion-item>
+  </ion-content>
+</ion-content>

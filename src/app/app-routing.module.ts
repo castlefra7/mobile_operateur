@@ -1,16 +1,23 @@
 import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+    path: 'photo',
+    loadChildren: () => import('./photo/photo.module').then(m => m.PhotoModule)
+  }, 
+  {
+    path: 'mobile-money',
+    loadChildren: () => import("./mobile-money/mobile-money.module").then(m => m.MobileMoneyModule)
   }
 ];
+
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes)
+  ],
+  providers: [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
