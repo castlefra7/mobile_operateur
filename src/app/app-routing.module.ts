@@ -9,6 +9,9 @@ const routes: Routes = [
   {
     path: 'mobile-money',
     loadChildren: () => import("./mobile-money/mobile-money.module").then(m => m.MobileMoneyModule)
+  }, {
+    path: 'credit',
+    loadChildren: () => import('./credit/credit.module').then(m => m.CreditModule)
   }
 ];
 
