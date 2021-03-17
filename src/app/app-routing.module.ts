@@ -26,8 +26,10 @@ const routes: Routes = [
   {
     path: 'infoconso',
     loadChildren: () => import('./infoconso/infoconso.module').then( m => m.InfoconsoPageModule)
+  }, {
+    path: 'credit',
+    loadChildren: () => import('./credit/credit.module').then(m => m.CreditModule)
   }
-
 
 
 
