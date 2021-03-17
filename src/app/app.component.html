@@ -28,11 +28,26 @@
             <ion-icon name="card-outline" slot="start"></ion-icon>
               Credit
           </ion-item>
+          <ion-item [routerLink]="['/appel']" routerDirection="forward">
+            <ion-icon name="call-outline" slot="start"></ion-icon>
+              Appel
+          </ion-item>
+          <ion-item [routerLink]="['/message']" routerDirection="forward">
+            <ion-icon name="chatbubble-ellipses-outline" slot="start"></ion-icon>
+              Messages
+          </ion-item>
+          <ion-item [routerLink]="['/apps']" routerDirection="forward">
+            <ion-icon name="logo-whatsapp" slot="start"></ion-icon>
+              Applications
+          </ion-item>
+          <ion-item [routerLink]="['/infoconso']" routerDirection="forward">
+            <ion-icon name="people-outline" slot="start"></ion-icon>
+              Info Conso
+          </ion-item>
         </ion-menu-toggle>
       </ion-list>
     </ion-content>
   </ion-menu>
-
   
   <ion-router-outlet id="main"></ion-router-outlet>
 </ion-app>

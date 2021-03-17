@@ -9,7 +9,26 @@ const routes: Routes = [
   {
     path: 'mobile-money',
     loadChildren: () => import("./mobile-money/mobile-money.module").then(m => m.MobileMoneyModule)
+  },
+  {
+    path: 'appel',
+    loadChildren: () => import('./appel/appel.module').then( m => m.AppelPageModule)
+  },
+  {
+    path: 'message',
+    loadChildren: () => import('./message/message.module').then( m => m.MessagePageModule)
+  },
+  {
+    path: 'apps',
+    loadChildren: () => import('./apps/apps.module').then( m => m.AppsPageModule)
+  },  {
+    path: 'infoconso',
+    loadChildren: () => import('./infoconso/infoconso.module').then( m => m.InfoconsoPageModule)
   }
+
+
+
+
 ];
 
 @NgModule({
