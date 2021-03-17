@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-content>
+    <ion-item class="header">
+       Message
+    </ion-item>
+    <ion-item>
+      <ion-label>Date</ion-label>
+      <ion-datetime displayFormat="MMM" value="2021-03-17"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Heure</ion-label>
+      <ion-datetime displayFormat="h:mm A" pickerFormat="h:mm A" value="1990-02-19T07:43Z"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Contacts</ion-label>
+      <ion-select placeholder="Select One" >
+        <ion-select-option *ngFor="let contact of contacts$ | async" [value]="contact">
+          {{ contact.name }} ({{ contact.phoneNumber }})
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Numero</ion-label>
+      <ion-input placeholder="(+261)"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-textarea rows="6" clearOnEdit="true"></ion-textarea>
+    </ion-item>
+    <ion-button expand="block">
+      Envoyer
+    </ion-button>
+  </ion-content>
+</ion-content>
