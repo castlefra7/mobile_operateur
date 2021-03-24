@@ -4,14 +4,18 @@ import { MobileMoneyRoutingModule } from './mobile-money-routing.module';
 import { DepositComponent } from './components/deposit/deposit.component';
 import { WithdrawComponent } from './components/withdraw/withdraw.component';
 import { TransferComponent } from './components/transfer/transfer.component';
+import { IonicModule } from '@ionic/angular';
+import { MobileMoneyComponent } from './mobile-money.component';
 
 
 
 @NgModule({
-  declarations: [DepositComponent, WithdrawComponent, TransferComponent],
+  declarations: [DepositComponent, WithdrawComponent, TransferComponent, MobileMoneyComponent],
   imports: [
     CommonModule,
+    IonicModule,
     MobileMoneyRoutingModule
-  ]
+  ],
+  providers: []
 })
 export class MobileMoneyModule { }

@@ -4,6 +4,7 @@ import { AchatComponent } from './components/achat/achat.component';
 import { CreditComponent } from './credit.component';
 import { CreditRoutingModule } from './credit-routing.module';
 import { TransferComponent } from './components/transfer/transfer.component';
+import { IonicModule } from '@ionic/angular';
 
 
 
@@ -11,7 +12,8 @@ import { TransferComponent } from './components/transfer/transfer.component';
   declarations: [AchatComponent, CreditComponent, TransferComponent],
   imports: [
     CommonModule,
-    CreditRoutingModule
+    CreditRoutingModule,
+    IonicModule
   ]
 })
 export class CreditModule { }
