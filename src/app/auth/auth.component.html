@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-content>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <form [formGroup]="myForm" (ngSubmit)="onLogin()" >
+            <ion-item>
+              <ion-label for="numb" fixed>Votre numéro:</ion-label>
+              <ion-input id="numb" [formControl]="myForm.controls['phone_number']"></ion-input>
+            </ion-item>
+            <ion-button [disabled]="!myForm.valid" size="block" type="submit" color="primary">Se connecter</ion-button>
+          </form>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    
+  </ion-content>
+</ion-content>
