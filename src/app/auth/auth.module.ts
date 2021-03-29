@@ -11,7 +11,7 @@ import { AuthService } from './services/auth.service';
 @NgModule({
   declarations: [AuthComponent],
   imports: [
-    CommonModule, AuthRoutingModule, IonicModule, ReactiveFormsModule, FormsModule, IonicModule.forRoot()
+    CommonModule, AuthRoutingModule, IonicModule, ReactiveFormsModule, FormsModule
   ],
   providers: [AuthService]
 })

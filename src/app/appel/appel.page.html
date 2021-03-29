@@ -7,7 +7,7 @@
     <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
       <ion-item class="header"> Appel </ion-item>
       <ion-item>
-        <ion-label>Date</ion-label>
+        <ion-label>Date et Heure:</ion-label>
         <ion-datetime [formControl]="myForm.controls['date']" displayFormat="DD-MMM-YYYY HH:mm" displayTimezone="utc"></ion-datetime>
       </ion-item>
       <!-- <ion-item>
@@ -22,7 +22,7 @@
         </ion-select>
       </ion-item> -->
       <ion-item>
-        <ion-label>Numero</ion-label>
+        <ion-label>Numéro:</ion-label>
         <ion-input [formControl]="myForm.controls['phone_number_destination']" placeholder=""></ion-input>
       </ion-item>
       <ion-item>

@@ -7,19 +7,25 @@ import { InfoConso } from '../infoconso';
 })
 export class InfoconsoService {
 
-  infoConso: InfoConso[] = [
-    { resteCred: "1000 Ar", forfaits : [
-      { name : "Faceboobaka", applications : [
-        { id: 1, name : "Facebook", units: [
-          { id: 1, name : "Mo" }
-        ], amount : 1000 }
-      ] }
-    ] }
-  ];
+  // infoConso: InfoConso[] = [
+  //   {
+  //     resteCred: "1000 Ar", forfaits: [
+  //       {
+  //         name: "Faceboobaka", applications: [
+  //           {
+  //             id: 1, name: "Facebook", unit: [
+  //               { id: 1, name: "Mo" }
+  //             ], amount: 1000
+  //           }
+  //         ]
+  //       }
+  //     ]
+  //   }
+  // ];
 
   constructor() { }
 
-  findByCustomerId(customerId: number) : Observable<InfoConso[]> {
-    return of(this.infoConso);
-  } 
+  // findByCustomerId(customerId: number): Observable<InfoConso[]> {
+  //   // return of(this.infoConso);
+  // }
 }

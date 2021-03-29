@@ -5,9 +5,9 @@
 <ion-content [fullscreen]="true">
   <ion-content>
     <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-      <ion-item class="header"> Appel </ion-item>
+      <ion-item class="header"> Message </ion-item>
       <ion-item>
-        <ion-label>Date</ion-label>
+        <ion-label>Date et Heure:</ion-label>
         <ion-datetime [formControl]="myForm.controls['date']" displayFormat="DD-MMM-YYYY HH:mm" displayTimezone="utc"></ion-datetime>
       </ion-item>
       <!-- <ion-item>
@@ -22,11 +22,12 @@
         </ion-select>
       </ion-item> -->
       <ion-item>
-        <ion-label>Numero</ion-label>
+        <ion-label>Numéro:</ion-label>
         <ion-input [formControl]="myForm.controls['phone_number_destination']" placeholder=""></ion-input>
       </ion-item>
       <ion-item>
-        <ion-textarea [formControl]="myForm.controls['text']" rows="6" clearOnEdit="true"></ion-textarea>
+        <ion-label>Texte:</ion-label>
+        <ion-textarea [formControl]="myForm.controls['text']" rows="6" clearOnEdit="true" placeholder="..."></ion-textarea>
       </ion-item>
       <ion-button type="submit" expand="block"> Envoyer </ion-button>
     </form>

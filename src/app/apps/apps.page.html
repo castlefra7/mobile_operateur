@@ -7,7 +7,7 @@
     <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
       <ion-item class="header"> Applications </ion-item>
       <ion-item>
-        <ion-label>Date</ion-label>
+        <ion-label>Date et Heure:</ion-label>
         <ion-datetime
           [formControl]="myForm.controls['created_at']"
           displayFormat="DD-MMM-YYYY HH:mm"
@@ -15,7 +15,7 @@
         ></ion-datetime>
       </ion-item>
       <ion-item>
-        <ion-label>Applications</ion-label>
+        <ion-label>Applications:</ion-label>
         <ion-select [formControl]="myForm.controls['internet_application_id']" placeholder="Choisir Application">
           <ion-select-option
             *ngFor="let application of applications"
@@ -26,7 +26,7 @@
         </ion-select>
       </ion-item>
       <ion-item>
-        <ion-label>Consommation</ion-label>
+        <ion-label>Consommation:</ion-label>
         <ion-input [formControl]="myForm.controls['amount']" placeholder="1Go ou 1Mo ou 1Ko"></ion-input>
       </ion-item>
       <ion-button type="submit" expand="block"> Valider </ion-button>

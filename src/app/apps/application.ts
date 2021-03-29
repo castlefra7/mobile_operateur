@@ -8,5 +8,5 @@ export interface Application {
     name?: string;
     internet_application_id?: number;
     t_type?: string;
-    unit?:[];
+    unit?: Unit[];
 }
