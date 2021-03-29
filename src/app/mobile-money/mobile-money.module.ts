@@ -6,6 +6,9 @@ import { WithdrawComponent } from './components/withdraw/withdraw.component';
 import { TransferComponent } from './components/transfer/transfer.component';
 import { IonicModule } from '@ionic/angular';
 import { MobileMoneyComponent } from './mobile-money.component';
+import { MobileMoneyService } from './services/mobile-money.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -14,8 +17,10 @@ import { MobileMoneyComponent } from './mobile-money.component';
   imports: [
     CommonModule,
     IonicModule,
-    MobileMoneyRoutingModule
+    MobileMoneyRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: []
+  providers: [MobileMoneyService]
 })
 export class MobileMoneyModule { }

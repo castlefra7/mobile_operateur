@@ -19,6 +19,10 @@ export class AuthComponent implements OnInit {
 
   ngOnInit() { }
 
+  onLogout() {
+    this.authService.logout();
+  }
+
   onLogin() {
     console.log(this.myForm.value);
     const {phone_number} = this.myForm.value;
