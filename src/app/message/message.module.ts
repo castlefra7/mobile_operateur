@@ -1,21 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
 import { MessagePageRoutingModule } from './message-routing.module';
 
-import { MessagePage } from './message.page';
 import { ListMessagesComponent } from './list-messages/list-messages.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MessageService } from './services/message.service';
+import { MessagePage } from './message.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MessagePageRoutingModule
+    MessagePageRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  declarations: [MessagePage, ListMessagesComponent]
+  providers: [MessageService],
+  declarations: [ListMessagesComponent, MessagePage]
 })
 export class MessagePageModule {}

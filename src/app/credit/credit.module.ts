@@ -8,11 +8,12 @@ import { IonicModule } from '@ionic/angular';
 import { CreditService } from './services/credit.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BuyfromMobileComponent } from './components/buyfrom-mobile/buyfrom-mobile.component';
 
 
 
 @NgModule({
-  declarations: [AchatComponent, CreditComponent, TransferComponent],
+  declarations: [AchatComponent, CreditComponent, TransferComponent,BuyfromMobileComponent],
   imports: [
     CommonModule,
     CreditRoutingModule,

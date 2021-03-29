@@ -1,35 +1,35 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-  </ion-toolbar>
+  <ion-toolbar> </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-content>
-    <ion-item class="header">
-       Applications
-    </ion-item>
-    <ion-item>
-      <ion-label>Date</ion-label>
-      <ion-datetime displayFormat="MMM" value="2021-03-17"></ion-datetime>
-    </ion-item>
-    <ion-item>
-      <ion-label>Heure</ion-label>
-      <ion-datetime displayFormat="h:mm A" pickerFormat="h:mm A" value="1990-02-19T07:43Z"></ion-datetime>
-    </ion-item>
-    <ion-item>
-      <ion-label>Applications</ion-label>
-      <ion-select placeholder="Choisir Application">
-        <ion-select-option *ngFor="let application of applications$ | async" [value]="application">
-          {{ application.name }}
-        </ion-select-option>
-      </ion-select>
-    </ion-item>
-    <ion-item>
-      <ion-label>Consommation</ion-label>
-      <ion-input placeholder="  Mo"></ion-input>
-    </ion-item>
-    <ion-button expand="block">
-      Valider
-    </ion-button>
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+      <ion-item class="header"> Applications </ion-item>
+      <ion-item>
+        <ion-label>Date</ion-label>
+        <ion-datetime
+          [formControl]="myForm.controls['created_at']"
+          displayFormat="DD-MMM-YYYY HH:mm"
+          displayTimezone="utc"
+        ></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>Applications</ion-label>
+        <ion-select [formControl]="myForm.controls['internet_application_id']" placeholder="Choisir Application">
+          <ion-select-option
+            *ngFor="let application of applications"
+            [value]="application.id"
+          >
+            {{ application.name }}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Consommation</ion-label>
+        <ion-input [formControl]="myForm.controls['amount']" placeholder="1Go ou 1Mo ou 1Ko"></ion-input>
+      </ion-item>
+      <ion-button type="submit" expand="block"> Valider </ion-button>
+    </form>
   </ion-content>
 </ion-content>

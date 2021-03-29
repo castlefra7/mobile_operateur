@@ -4,8 +4,9 @@ export interface Unit {
 }
 
 export interface Application {
-    id?: number,
-    name?: string,
-    units?: Unit[],
-    amount?: number
+    id?: number;
+    name?: string;
+    internet_application_id?: number;
+    t_type?: string;
+    unit?:[];
 }

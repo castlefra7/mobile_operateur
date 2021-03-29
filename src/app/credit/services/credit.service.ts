@@ -11,6 +11,10 @@ export interface OperationI {
   date: String;
 }
 
+export interface BuyFromMobile extends OperationI {
+  password: String;
+}
+
 export interface Buy extends OperationI {
 }
 
@@ -25,6 +29,18 @@ export interface Transfer extends OperationI {
 export class CreditService {
 
   constructor(private http: HttpClient, private auth: AuthService) { }
+
+
+  async buyCreditFromMobileMoney(newBuy: BuyFromMobile): Promise<Observable<HttpResponseBody>> {
+    const options = {
+      headers: {
+        "Content-Type": "application/json"
+      }
+    };
+    const phone = await this.auth.getPhone();
+    newBuy.phone_number = phone;
+    return this.http.post(`${environment.url}/mobilemoney/buycredit`, newBuy, options)
+  }
 
   async buyCredit(newBuy: Buy): Promise<Observable<HttpResponseBody>> {
     const options = {
