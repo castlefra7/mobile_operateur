@@ -6,8 +6,35 @@
     "storage_bucket": "learn-jean.appspot.com"
   },
   "client": [
-
-
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1000413520391:android:cfd6e7e5b27058597fc0a2",
+        "android_client_info": {
+          "package_name": "com.mydomain.ioniclist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1000413520391-9i21cg1vsme6afjkbtva2cd1e9cr8uk6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRU7l1vRjr9E5-tweVp7th2c4dvn7IJco"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1000413520391-9i21cg1vsme6afjkbtva2cd1e9cr8uk6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
     {
       "client_info": {
         "mobilesdk_app_id": "1:1000413520391:android:fa05440de7bb46c47fc0a2",

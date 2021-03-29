@@ -1,9 +1,37 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>infoconso</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
 
+  <ion-content>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Solde crédit</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        {{credit}} Ar
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Solde Mobile Money</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        {{money}} Ar
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Offres restants</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
 </ion-content>

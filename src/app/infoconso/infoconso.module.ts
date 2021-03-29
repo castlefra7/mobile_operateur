@@ -7,14 +7,18 @@ import { IonicModule } from '@ionic/angular';
 import { InfoconsoPageRoutingModule } from './infoconso-routing.module';
 
 import { InfoconsoPage } from './infoconso.page';
+import { HttpClientModule } from '@angular/common/http';
+import { InfoconsoService } from './services/infoconso.service';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    InfoconsoPageRoutingModule
+    InfoconsoPageRoutingModule,
+    HttpClientModule
   ],
-  declarations: [InfoconsoPage]
+  declarations: [InfoconsoPage],
+  providers: [InfoconsoService]
 })
 export class InfoconsoPageModule {}

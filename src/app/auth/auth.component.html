@@ -17,14 +17,16 @@
               <ion-label for="numb" fixed>Votre numéro:</ion-label>
               <ion-input id="numb" [formControl]="myForm.controls['phone_number']"></ion-input>
             </ion-item>
+            <div  *ngIf="myForm.controls.phone_number.errors?.invalidPhone" class="validation-errors">
+              Numéro de téléphone incorrect
+            </div>
             <ion-button [disabled]="!myForm.valid" size="block" type="submit" color="primary">Se connecter</ion-button>
           </form>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
-          <ion-button (click)="onLogout()" size="block" color="primary">Se déconnecter</ion-button>
-
+          <ion-button (click)="onLogout()" size="block" color="light">Se déconnecter</ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>

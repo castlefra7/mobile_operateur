@@ -12,9 +12,10 @@ export class AuthComponent implements OnInit {
   myForm: FormGroup;
 
   constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
-     this.myForm = this.fb.group({
-      'phone_number': ['3302', Validators.required]
-    })  
+    this.myForm = this.fb.group({
+      phone_number: ['3302', Validators.required]
+    });
+
   }
 
   ngOnInit() { }
@@ -24,10 +25,14 @@ export class AuthComponent implements OnInit {
   }
 
   onLogin() {
-    console.log(this.myForm.value);
-    const {phone_number} = this.myForm.value;
-    if(this.authService.login(phone_number)) {
-      this.router.navigate(['/mobile-money']);
-    }
+
+    const { phone_number } = this.myForm.value;
+    this.authService.login(phone_number).then(result => {
+      if (result == true) {
+        this.router.navigate(['/mobile-money']);
+      } else {
+        this.myForm.controls.phone_number.setErrors({invalidPhone: true});
+      }
+    });
   }
 }

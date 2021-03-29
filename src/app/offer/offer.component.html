@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-content>
+    <ion-item button (click)="go('buy')">
+      Achat offre
+      <ion-icon name="arrow-forward-circle-outline" slot="end"></ion-icon>
+    </ion-item>
+    <ion-item button (click)="go('buyMobile')">
+      Achat offre via mobile money
+      <ion-icon name="arrow-forward-circle-outline" slot="end"></ion-icon>
+    </ion-item>
+  </ion-content>
+</ion-content>
