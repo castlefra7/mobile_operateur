@@ -5,6 +5,9 @@ import { CreditComponent } from './credit.component';
 import { CreditRoutingModule } from './credit-routing.module';
 import { TransferComponent } from './components/transfer/transfer.component';
 import { IonicModule } from '@ionic/angular';
+import { CreditService } from './services/credit.service';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -13,7 +16,10 @@ import { IonicModule } from '@ionic/angular';
   imports: [
     CommonModule,
     CreditRoutingModule,
-    IonicModule
-  ]
+    IonicModule,
+    HttpClientModule,
+    ReactiveFormsModule
+  ],
+  providers: [CreditService]
 })
 export class CreditModule { }

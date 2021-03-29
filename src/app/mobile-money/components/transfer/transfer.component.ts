@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { MobileMoneyService } from '../../services/mobile-money.service';
 
 @Component({
   selector: 'app-transfer',
@@ -7,8 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TransferComponent implements OnInit {
 
-  constructor() { }
+  myForm: FormGroup;
+
+  constructor(private moneyService: MobileMoneyService, private fb: FormBuilder) {
+    var dt = new Date();
+    this.myForm = fb.group({
+      amount: [0],
+      date: [dt.toISOString()],
+      password: [''],
+      phone_number_destination: ['']
+    })
+  }
 
   ngOnInit() {}
+
+  onSubmit() {
+
+    this.moneyService.transfer(this.myForm.value).then(response => {
+      response.subscribe(
+        data => console.log(data)
+      );
+      this.myForm.get("amount").setValue(0);
+    })
+  }
 
 }

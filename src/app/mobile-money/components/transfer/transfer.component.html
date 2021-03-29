@@ -9,27 +9,29 @@
   </ion-refresher>
 
   <ion-content>
-    <ion-item class="header">
-      Transfert mobile money
-    </ion-item>
-    <ion-item>
-      <ion-label>Date</ion-label>
-      <ion-datetime displayFormat="MMM" value="2021-03-17"></ion-datetime>
-    </ion-item>
-    <ion-item>
-      <ion-label>Heure</ion-label>
-      <ion-datetime displayFormat="h:mm A" pickerFormat="h:mm A" value="1990-02-19T07:43Z"></ion-datetime>
-    </ion-item>
-    <ion-item>
-      <ion-label>Numéro destinataire</ion-label>
-      <ion-input slot="end" placeholder="..."></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>Montant</ion-label>
-      <ion-input slot="end" placeholder="..."></ion-input>
-    </ion-item>
-    <ion-button expand="block">
-      Valider
-    </ion-button>
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+      <ion-item class="header">
+        Retrait mobile money
+      </ion-item>
+      <ion-item>
+        <ion-label>Date et Heure</ion-label>
+        <ion-datetime  [formControl]="myForm.controls['date']" displayFormat="DD-MMM-YYYY HH:mm" displayTimezone="utc"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>Numéro destinataire</ion-label>
+        <ion-input [formControl]="myForm.controls['phone_number_destination']" placeholder=""></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Montant</ion-label>
+        <ion-input [formControl]="myForm.controls['amount']" placeholder="montant..."></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Mot de passe</ion-label>
+        <ion-input [formControl]="myForm.controls['password']" placeholder="..."></ion-input>
+      </ion-item>
+      <ion-button type="submit" expand="block">
+        Valider
+      </ion-button>
+    </form>
   </ion-content>
 </ion-content>

@@ -15,7 +15,7 @@ export class AuthService {
   login(phone_number: string) {
     // call an endpoint to check if this phone number exists
     // if so then set the storage api
-    if (phone_number == "+261332087730") {
+    if (phone_number == "+261331128653") {
       Storage.set({
         key: this.CONTACT_STORAGE,
         value: JSON.stringify(phone_number)
@@ -32,7 +32,7 @@ export class AuthService {
 
   async getPhone() {
     const phone_number  = await Storage.get({ key: this.CONTACT_STORAGE });
-    return phone_number.value;
+    return JSON.parse(phone_number.value);
   }
 
   async isLoggedIn() {
