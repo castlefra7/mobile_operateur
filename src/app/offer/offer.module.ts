@@ -8,6 +8,7 @@ import { OfferComponent } from './offer.component';
 import { OfferService } from './services/offer.service';
 import { BuyOfferComponent } from './components/buy-offer/buy-offer.component';
 import { BuyOfferMobileComponent } from './components/buy-offer-mobile/buy-offer-mobile.component';
+import { CustomCardModule } from '../custom-card/custom-card.module';
 
 
 
@@ -19,6 +20,7 @@ import { BuyOfferMobileComponent } from './components/buy-offer-mobile/buy-offer
     HttpClientModule,
     ReactiveFormsModule,
     IonicModule,
+    CustomCardModule
   ],
   providers: [OfferService]
 })

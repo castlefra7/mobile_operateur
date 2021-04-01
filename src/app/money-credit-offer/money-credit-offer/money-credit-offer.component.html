@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" >
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-grid class="ion-no-padding ion-no-margin">
+    <ion-row>
+      <ion-col >
+        <app-custom-card (emitEvent)="goMobile($event)" title="Dépôt argent" image="assets/mobile_money/deposit.svg" link="deposit"></app-custom-card>
+      </ion-col>
+      <ion-col>
+        <app-custom-card (emitEvent)="goMobile($event)" title="Retrait argent" image="assets/mobile_money/withdraw.svg" link="withdraw"></app-custom-card>
+      </ion-col>
+      <ion-col>
+        <app-custom-card (emitEvent)="goMobile($event)" title="Transfer argent" image="assets/mobile_money/transfer.svg" link="transfer"></app-custom-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col >
+        <app-custom-card (emitEvent)="goCredit($event)" title="Achat crédit" image="assets/credit/buy.svg" link="achat"></app-custom-card>
+      </ion-col>
+      <ion-col>
+        <app-custom-card (emitEvent)="goCredit($event)" title="Achat Crédit(Ar)" image="assets/credit/buy_from_mobile.svg" link="buyMobile"></app-custom-card>
+      </ion-col>
+      <ion-col>
+        <app-custom-card (emitEvent)="goCredit($event)" title="Transfer crédit" image="assets/credit/transfer.svg" link="transfer"></app-custom-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <app-custom-card (emitEvent)="goOffer($event)" title="Achat offre" image="assets/offer/buy.svg" link="buy"></app-custom-card>
+      </ion-col>
+      <ion-col>
+        <app-custom-card (emitEvent)="goOffer($event)" title="Achat offre(Ar)" image="assets/offer/buy.svg" link="buyMobile"></app-custom-card>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

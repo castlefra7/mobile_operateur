@@ -32,7 +32,7 @@ export class InfoconsoService {
     const phone = await this.auth.getPhone();
     const url = `${environment.url}/balances?phone_number=${phone}`;
     const response = await this.http.get<HttpResponseBody>(url, options).toPromise();
-    const result = await new Promise((resolve, reject) => {
+    const result = await new Promise<Array<Balances>>((resolve, reject) => {
       if(response.status?.code == 200) {
         resolve(response.data);
       } else {

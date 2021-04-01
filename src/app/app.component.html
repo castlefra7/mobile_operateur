@@ -1,7 +1,7 @@
 <ion-app>
 
-  <ion-header [translucent]="true">
-    <ion-toolbar>
+  <ion-header  [translucent]="true">
+    <ion-toolbar class="primary">
       <ion-buttons slot="start">
         <ion-menu-button><ion-icon name="reorder-four-outline"></ion-icon></ion-menu-button>
       </ion-buttons>
@@ -20,6 +20,10 @@
     <ion-content>
       <ion-list>
         <ion-menu-toggle auto-hide="true">
+          <ion-item [routerLink]="['/money-credit-offer']" routerDirection="forward">
+            <ion-icon name="cash-outline" slot="start"></ion-icon>
+              Kabs
+          </ion-item>
           <ion-item [routerLink]="['/mobile-money']" routerDirection="forward">
             <ion-icon name="cash-outline" slot="start"></ion-icon>
               Mobile money

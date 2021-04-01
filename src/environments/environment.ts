@@ -4,8 +4,9 @@
 
 export const environment = {
   production: false,
-  url: "http://192.168.88.163:8080"
-  
+  // url: "http://localhost:8080"
+  // url: "https://operateur-kabs.herokuapp.com/"
+  url: "http://10.0.2.2:8080"
 };
 
 /*

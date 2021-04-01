@@ -1,0 +1,25 @@
+$main_color: #1B264F;
+$secondary_color: #FCCA46;
+$background_color: #F5F3F5;
+
+.card {
+    background-color: $main_color;
+    margin: 1px !important;
+    border-radius: 0 !important;
+}
+
+.img {
+    fill: $secondary_color !important;
+    stroke: $secondary_color !important;
+    width: 100px;
+    height: 100px;
+}
+
+.title {
+    color: $secondary_color;
+    font-size: 14px;
+}
+
+.header {
+    padding: 7px 0;
+}

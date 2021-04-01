@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-mobile-money',
-  templateUrl: './mobile-money.component.html',
-  styleUrls: ['./mobile-money.component.scss'],
+  selector: 'app-all',
+  templateUrl: './all.component.html',
+  styleUrls: ['./all.component.scss'],
 })
-export class MobileMoneyComponent implements OnInit {
+export class AllComponent implements OnInit {
+
   orange: String = "blue";
   secondary_color: String = "red";
   deposit_img: String = "assets/mobile_money/deposit.svg";
@@ -15,10 +16,10 @@ export class MobileMoneyComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
+    console.log("ato")
   }
 
   go(link: String) {
     this.router.navigate([`mobile-money/${link}`]);
   }
-
 }

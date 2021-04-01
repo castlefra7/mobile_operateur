@@ -13,7 +13,7 @@ export class AuthComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
     this.myForm = this.fb.group({
-      phone_number: ['3302', Validators.required]
+      phone_number: ['+261331876577', Validators.required]
     });
 
   }

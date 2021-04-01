@@ -24,6 +24,11 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
+    path: 'money-credit-offer',
+    loadChildren: () => import("./money-credit-offer/money-credit-offer.module").then(m => m.MoneyCreditOfferModule),
+    canActivate: [AuthGuard]
+  },
+  {
     path: 'appel',
     loadChildren: () => import('./appel/appel.module').then(m => m.AppelPageModule),
     canActivate: [AuthGuard]

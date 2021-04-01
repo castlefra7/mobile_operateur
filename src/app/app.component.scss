@@ -1,3 +1,10 @@
+$main_color: #1B264F;
+
+.primary {
+    background-color: $main_color;
+    color: $main_color;
+}
+
 a {
     text-decoration: none;
 }

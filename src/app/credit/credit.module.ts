@@ -9,6 +9,7 @@ import { CreditService } from './services/credit.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BuyfromMobileComponent } from './components/buyfrom-mobile/buyfrom-mobile.component';
+import { CustomCardModule } from '../custom-card/custom-card.module';
 
 
 
@@ -19,7 +20,8 @@ import { BuyfromMobileComponent } from './components/buyfrom-mobile/buyfrom-mobi
     CreditRoutingModule,
     IonicModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CustomCardModule
   ],
   providers: [CreditService]
 })
