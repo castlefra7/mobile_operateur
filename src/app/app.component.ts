@@ -1,15 +1,22 @@
 import { Component } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/database';
+import { Router } from '@angular/router';
+// import { AngularFireDatabase } from '@angular/fire/database';
 // import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-
+// import { ELocalNotificationTriggerUnit, LocalNotifications } from '@ionic-native/local-notifications/ngx';
+// import { Plugins } from '@capacitor/core';
 import {
+  LocalNotification,
+  LocalNotificationActionPerformed,
   Plugins,
   PushNotification,
   PushNotificationToken
 } from '@capacitor/core';
 import { AlertController } from '@ionic/angular';
 
-const { PushNotifications } = Plugins;
+const { PushNotifications, LocalNotifications } = Plugins;
+
+
+
 
 @Component({
   selector: 'app-root',
@@ -19,7 +26,7 @@ const { PushNotifications } = Plugins;
 export class AppComponent {
   main_color: String = "#1B264F";
 
-  constructor(private afDB: AngularFireDatabase, private alert: AlertController) {
+  constructor(private alert: AlertController, private router: Router) {
 
   }
 
@@ -34,14 +41,40 @@ export class AppComponent {
 
     await alert.present();
   }
-// constructor(private splashScreen: SplashScreen) {}
-   ngOnInit(): void {
+
+  async simpleNotif() {
+    var dt = new Date();
+    dt.setSeconds(dt.getSeconds() + 2);
+    const notifs = await LocalNotifications.schedule({
+      notifications: [
+        {
+          title: "Title",
+          body: "Bonjour ca va ve nareo",
+          id: 1,
+          schedule: { at: dt },
+          sound: null,
+          attachments: null,
+          actionTypeId: "",
+          extra: null
+        }
+      ]
+    });
+  }
+
+  ngOnInit(): void {
+    LocalNotifications.addListener('localNotificationActionPerformed', (notificationAction: LocalNotificationActionPerformed) => {
+      this.router.navigate(['/money-credit-offer']);
+      // console.log("ato oo");
+      // console.log(notificationAction.notification.body)
+    })
+    // this.simpleNotif();
+
     //  this.presentAlert();
     // this.splashScreen.hide();
     // this.afDB.list('people').valueChanges().subscribe(tab => {
     //   console.log(JSON.stringify(tab));
     // });
-    
+
     // //  this.afDB.list('people/').push({
     // //   name: 'jakob'
     // // });

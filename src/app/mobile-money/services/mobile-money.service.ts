@@ -36,7 +36,7 @@ export class MobileMoneyService {
     };
     const phone = await this.auth.getPhone();
     newDeposit.phone_number = phone;
-    return this.http.post(`${environment.url}/mobilemoney/deposit`, newDeposit, options)
+    return this.http.post(`${environment.url}/mobilemoney/deposit`, newDeposit, options);
   }
 
   async transfer(newTransfer: Transfer): Promise<Observable<HttpResponseBody>> {

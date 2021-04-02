@@ -27,7 +27,7 @@ export class AppsPage implements OnInit {
     this.application.findAll().subscribe(response => {
       console.log(response);
       if(response.status?.code == 200) {
-        this.applications = response.data;
+        // this.applications = response.data;
       }
     });
   }

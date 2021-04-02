@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { InfoconsoService } from './services/infoconso.service';
 
 @Component({
@@ -14,8 +15,18 @@ export class InfoconsoPage implements OnInit {
   remainOffers: String = "";
   main_color: String = "#1B264F";
   back_color: String = "#F5F3F5";
+  myForm: FormGroup;
 
-  constructor(private info: InfoconsoService) { }
+  constructor(private info: InfoconsoService, private fb: FormBuilder) {
+    var dt = new Date();
+    this.myForm = fb.group({
+      date: [dt.toISOString()],
+    })
+  }
+
+  onSubmit() {
+    this.getData(); 
+  }
 
   ngOnInit() {
     // this.info.getBalances().subscribe(response => {
@@ -25,7 +36,9 @@ export class InfoconsoPage implements OnInit {
   }
 
   getData() {
-    this.info.getBalances()
+    console.log("test")
+    const values = this.myForm.value;
+    this.info.getBalances(values.date)
     .then(res => {
       console.log(res);
       if(res != null && res.length >0 ){

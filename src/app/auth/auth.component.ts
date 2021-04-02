@@ -10,6 +10,7 @@ import { AuthService } from './services/auth.service';
 })
 export class AuthComponent implements OnInit {
   myForm: FormGroup;
+  ccolor: String = "#1B264F";
   main_color: String = "linear-gradient(to bottom right, #FCCA46 40%,#1B264F 60%)";
   back_color: String = "#F5F3F5";
 
@@ -35,6 +36,6 @@ export class AuthComponent implements OnInit {
       } else {
         this.myForm.controls.phone_number.setErrors({invalidPhone: true});
       }
-    });
+    }).catch(err => alert(JSON.stringify(err)));
   }
 }

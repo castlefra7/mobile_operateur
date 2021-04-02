@@ -16,9 +16,9 @@
         <ion-input [formControl]="myForm.controls['phone_number']"></ion-input>
       </ion-item>
       <div  *ngIf="myForm.controls.phone_number.errors?.invalidPhone" class="validation-errors">
-        Numéro de téléphone incorrec
+        Numéro de téléphone incorrect
       </div>
-      <ion-button  [style.--background]="main_color" [disabled]="!myForm.valid" expand="block" type="submit" >Se connecter</ion-button>
+      <ion-button  [style.--background]="ccolor" [disabled]="!myForm.valid" expand="block" type="submit" >Se connecter</ion-button>
     </form>
   <ion-button (click)="onLogout()"  expand="block"  color="light">Se déconnecter</ion-button>
 
