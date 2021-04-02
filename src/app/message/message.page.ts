@@ -15,6 +15,7 @@ export class MessagePage implements OnInit {
   myForm: FormGroup;
 
   contacts$: Observable<Contact[]>;
+  main_color: String = "#1B264F";
 
   constructor(private contacts: ContactService, private router: Router, private fb: FormBuilder, private message: MessageService) {
     var dt = new Date();

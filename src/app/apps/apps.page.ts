@@ -12,6 +12,7 @@ import { ApplicationsService } from './services/applications.service';
 export class AppsPage implements OnInit {
   myForm: FormGroup;
   applications : Application[];
+  main_color: String = "#1B264F";
 
   constructor(private application : ApplicationsService, private fb: FormBuilder) {
     var dt = new Date();

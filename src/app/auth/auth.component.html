@@ -3,34 +3,25 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [style.--background]="main_color" [fullscreen]="true">
   <ion-refresher slot="fixed">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 
-  <ion-content>
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          <form [formGroup]="myForm" (ngSubmit)="onLogin()" >
-            <ion-item>
-              <ion-label for="numb" fixed>Votre numéro:</ion-label>
-              <ion-input id="numb" [formControl]="myForm.controls['phone_number']"></ion-input>
-            </ion-item>
-            <div  *ngIf="myForm.controls.phone_number.errors?.invalidPhone" class="validation-errors">
-              Numéro de téléphone incorrect
-            </div>
-            <ion-button [disabled]="!myForm.valid" size="block" type="submit" color="primary">Se connecter</ion-button>
-          </form>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          <ion-button (click)="onLogout()" size="block" color="light">Se déconnecter</ion-button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
 
-    
-  </ion-content>
+  <div id="container">
+    <form [formGroup]="myForm" class="ion-margin-bottom" (ngSubmit)="onLogin()" >
+      <ion-item  [style.--background]="back_color" >
+        <ion-label position="stacked" fixed>Votre numéro:</ion-label>
+        <ion-input [formControl]="myForm.controls['phone_number']"></ion-input>
+      </ion-item>
+      <div  *ngIf="myForm.controls.phone_number.errors?.invalidPhone" class="validation-errors">
+        Numéro de téléphone incorrec
+      </div>
+      <ion-button  [style.--background]="main_color" [disabled]="!myForm.valid" expand="block" type="submit" >Se connecter</ion-button>
+    </form>
+  <ion-button (click)="onLogout()"  expand="block"  color="light">Se déconnecter</ion-button>
+
+  </div>
+
 </ion-content>

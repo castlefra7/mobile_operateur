@@ -10,6 +10,7 @@ import { OfferService } from '../../services/offer.service';
 })
 export class BuyOfferComponent implements OnInit {
   myForm: FormGroup;
+  main_color: String = "#1B264F";
 
   constructor(private offer: OfferService, private fb: FormBuilder,) {
     var dt = new Date();

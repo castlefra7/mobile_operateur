@@ -8,9 +8,8 @@ import { Console } from 'console';
   styleUrls: ['./money-credit-offer.component.scss'],
 })
 export class MoneyCreditOfferComponent implements OnInit {
-
+  back_color: String = "#F5F3F5";
   constructor(private router: Router) { }
-
   ngOnInit() {}
 
   goMobile(link: String) {

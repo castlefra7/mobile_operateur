@@ -18,6 +18,7 @@ const { PushNotifications } = Plugins;
 })
 export class AppComponent {
   main_color: String = "#1B264F";
+
   constructor(private afDB: AngularFireDatabase, private alert: AlertController) {
 
   }

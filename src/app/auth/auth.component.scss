@@ -2,9 +2,21 @@
     border: 1px solid black;
     border-radius: 7px;
 }
+
 .validation-errors {
     color: red;
     margin: 2px 0;
     margin-left: 7px;
 
 }
+
+#container {
+    text-align: center;
+  
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 25%;
+    transform: translateY(-25%);
+  }
+  

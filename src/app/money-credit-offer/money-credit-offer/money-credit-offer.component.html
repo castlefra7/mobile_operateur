@@ -3,12 +3,12 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [style.--background]="back_color" [fullscreen]="true">
   <ion-refresher slot="fixed" >
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 
-  <ion-grid class="ion-no-padding ion-no-margin">
+  <ion-grid class="ion-no-padding ion-margin">
     <ion-row>
       <ion-col >
         <app-custom-card (emitEvent)="goMobile($event)" title="Dépôt argent" image="assets/mobile_money/deposit.svg" link="deposit"></app-custom-card>

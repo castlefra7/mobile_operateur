@@ -3,9 +3,10 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-content>
+  <ion-item  [style.--background]="main_color" class="main-header">
+    Applications
+  </ion-item>
     <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-      <ion-item class="header"> Applications </ion-item>
       <ion-item>
         <ion-label>Date et Heure:</ion-label>
         <ion-datetime
@@ -31,5 +32,4 @@
       </ion-item>
       <ion-button type="submit" expand="block"> Valider </ion-button>
     </form>
-  </ion-content>
 </ion-content>

@@ -10,6 +10,8 @@ export interface Balances {
   creditBalance: Number;
   mobileMoneyBalance: Number;
   remainingOffers: {};
+  remainCalIntMess: String;
+  remainOffers: String;
 }
 
 @Injectable({

@@ -7,27 +7,24 @@
   <ion-refresher slot="fixed" >
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
-
-  <ion-content>
+  <ion-item  [style.--background]="main_color" class="main-header">
+    Retrait mobile money
+  </ion-item>
     <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-      <ion-item class="header">
-        Retrait mobile money
-      </ion-item>
       <ion-item>
         <ion-label>Date et Heure:</ion-label>
         <ion-datetime  [formControl]="myForm.controls['date']" displayFormat="DD-MMM-YYYY HH:mm" displayTimezone="utc"></ion-datetime>
       </ion-item>
       <ion-item>
         <ion-label>Montant:</ion-label>
-        <ion-input [formControl]="myForm.controls['amount']" placeholder="montant..."></ion-input>
+        <ion-input type="number" [formControl]="myForm.controls['amount']" placeholder=""></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Mot de passe:</ion-label>
-        <ion-input [formControl]="myForm.controls['password']" placeholder="..."></ion-input>
+        <ion-input type="password" [formControl]="myForm.controls['password']" placeholder=""></ion-input>
       </ion-item>
       <ion-button type="submit" expand="block">
         Valider
       </ion-button>
     </form>
-  </ion-content>
 </ion-content>

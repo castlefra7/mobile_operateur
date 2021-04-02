@@ -10,6 +10,8 @@ import { AuthService } from './services/auth.service';
 })
 export class AuthComponent implements OnInit {
   myForm: FormGroup;
+  main_color: String = "linear-gradient(to bottom right, #FCCA46 40%,#1B264F 60%)";
+  back_color: String = "#F5F3F5";
 
   constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
     this.myForm = this.fb.group({
@@ -29,7 +31,7 @@ export class AuthComponent implements OnInit {
     const { phone_number } = this.myForm.value;
     this.authService.login(phone_number).then(result => {
       if (result == true) {
-        this.router.navigate(['/mobile-money']);
+        this.router.navigate(['/money-credit-offer']);
       } else {
         this.myForm.controls.phone_number.setErrors({invalidPhone: true});
       }

@@ -10,12 +10,11 @@ import { MobileMoneyService } from './services/mobile-money.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CustomCardModule } from '../custom-card/custom-card.module';
-import { AllComponent } from './all/all.component';
 
 
 
 @NgModule({
-  declarations: [DepositComponent, WithdrawComponent, TransferComponent, MobileMoneyComponent, AllComponent],
+  declarations: [DepositComponent, WithdrawComponent, TransferComponent, MobileMoneyComponent],
   imports: [
     CommonModule,
     IonicModule,
@@ -25,6 +24,6 @@ import { AllComponent } from './all/all.component';
     CustomCardModule
   ],
   providers: [MobileMoneyService],
-  exports: [MobileMoneyComponent, AllComponent]
+  exports: [MobileMoneyComponent]
 })
 export class MobileMoneyModule { }

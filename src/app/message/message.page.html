@@ -3,9 +3,11 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-content>
+  <ion-item  [style.--background]="main_color" class="main-header">
+    Message
+  </ion-item>
+
     <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-      <ion-item class="header"> Message </ion-item>
       <ion-item>
         <ion-label>Date et Heure:</ion-label>
         <ion-datetime [formControl]="myForm.controls['date']" displayFormat="DD-MMM-YYYY HH:mm" displayTimezone="utc"></ion-datetime>
@@ -27,9 +29,8 @@
       </ion-item>
       <ion-item>
         <ion-label>Texte:</ion-label>
-        <ion-textarea [formControl]="myForm.controls['text']" rows="6" clearOnEdit="true" placeholder="..."></ion-textarea>
+        <ion-textarea [formControl]="myForm.controls['text']" rows="6" clearOnEdit="true" placeholder=""></ion-textarea>
       </ion-item>
       <ion-button type="submit" expand="block"> Envoyer </ion-button>
     </form>
-  </ion-content>
 </ion-content>

@@ -3,35 +3,53 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content  [style.--background]="back_color"  [fullscreen]="true">
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 
-  <ion-content>
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Solde crédit:</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        {{credit}} Ar
-      </ion-card-content>
-    </ion-card>
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Solde Mobile Money:</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        {{money}} Ar
-      </ion-card-content>
-    </ion-card>
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Offres restants:</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        
-      </ion-card-content>
-    </ion-card>
-  </ion-content>
+
+  <ion-grid  class="ion-no-padding ion-no-margin">
+    <ion-row>
+
+      <ion-col>
+        <ion-card [style.--background]= "main_color">
+          <ion-card-header>
+          <ion-card-subtitle style="color: white;" >Solde crédit</ion-card-subtitle>
+          <ion-card-title style="color: #FCCA46;">
+          {{credit | number}} Ar
+          </ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+
+      <ion-col>
+        <ion-card [style.--background]= "main_color">
+          <ion-card-header>
+          <ion-card-subtitle  style="color: white;" >Solde Mobile money</ion-card-subtitle>
+          <ion-card-title style="color: #FCCA46;">
+          {{money | number}} Ar
+          </ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-card>
+        <ion-card-content>
+          {{remainCalIntMess}}
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+    <ion-row>
+      <ion-card>
+        <ion-card-content>
+          {{remainOffers}}
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+  </ion-grid>
+    
+
+    
 </ion-content>

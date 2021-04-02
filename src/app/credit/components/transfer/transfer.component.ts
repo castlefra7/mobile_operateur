@@ -11,11 +11,12 @@ export class TransferComponent implements OnInit {
 
  
   myForm: FormGroup;
+  main_color: String = "#1B264F";
 
   constructor(private credit: CreditService, private fb: FormBuilder) {
     var dt = new Date();
     this.myForm = fb.group({
-      amount: [0],
+      amount: [],
       date: [dt.toISOString()],
       password: [''],
       phone_number_destination: ['']

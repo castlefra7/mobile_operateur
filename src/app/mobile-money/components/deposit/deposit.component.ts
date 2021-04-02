@@ -9,11 +9,11 @@ import { MobileMoneyService } from '../../services/mobile-money.service';
 })
 export class DepositComponent implements OnInit {
   myForm: FormGroup;
-
+  main_color: String = "#1B264F";
   constructor(private moneyService: MobileMoneyService, private fb: FormBuilder) {
     var dt = new Date();
     this.myForm = fb.group({
-      amount: [0],
+      amount: [],
       date: [dt.toISOString()],
     })
   }

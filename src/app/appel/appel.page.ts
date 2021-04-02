@@ -12,6 +12,7 @@ import { ContactService } from './services/contact.service';
 export class AppelPage implements OnInit {
   myForm: FormGroup;
   contacts$ : Observable<Contact[]>;
+  main_color: String = "#1B264F";
 
   constructor(private contact : ContactService, private fb: FormBuilder) {
     var dt = new Date();
