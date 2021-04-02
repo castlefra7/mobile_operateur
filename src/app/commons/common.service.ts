@@ -6,6 +6,11 @@ export interface HttpResponseBodyBalance {
   status?: Status;
 }
 
+export interface HttpResponseBodyApp {
+  data?: [];
+  status?: Status;
+}
+
 
 export interface Message {
   message: string;

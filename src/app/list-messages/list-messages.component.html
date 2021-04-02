@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  [style.--background]="back_color"  [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-item [style.--background]="main_color" class="main-header">
+    Les messages de l'opérateur
+  </ion-item>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card *ngFor="let notif of notifications">
+          <ion-card-header>
+            <ion-card-subtitle>{{title}}</ion-card-subtitle>
+          </ion-card-header>
+      
+          <ion-card-content>
+            {{notif.message}}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+</ion-content>

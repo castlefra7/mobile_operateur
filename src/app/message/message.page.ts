@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 import { Observable } from 'rxjs';
 import { Contact } from '../appel/contact';
 import { ContactService } from '../appel/services/contact.service';
@@ -17,7 +18,7 @@ export class MessagePage implements OnInit {
   contacts$: Observable<Contact[]>;
   main_color: String = "#1B264F";
 
-  constructor(private contacts: ContactService, private router: Router, private fb: FormBuilder, private message: MessageService) {
+  constructor(private contacts: ContactService, private router: Router, private fb: FormBuilder, private message: MessageService, private alert: AlertController) {
     var dt = new Date();
     this.myForm = fb.group({
       text: [''],
@@ -30,6 +31,17 @@ export class MessagePage implements OnInit {
     this.contacts$ = this.contacts.findAll();
   }
 
+  async presentAlert(message = "Une erreur inconnue s'est produite") {
+    const alert = await this.alert.create({
+      cssClass: 'erreur',
+      header: 'Erreur',
+      message,
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
+
   go(link: String) {
     this.router.navigate([`message/${link}`]);
   }
@@ -38,7 +50,11 @@ export class MessagePage implements OnInit {
 
     this.message.sendMessage(this.myForm.value).then(response => {
       response.subscribe(
-        data => console.log(data)
+        _arr => {
+          if (_arr.status?.code != 200) {
+            this.presentAlert(_arr.status?.message);
+          }
+        }
       );
       this.myForm.get("text").setValue('');
     })

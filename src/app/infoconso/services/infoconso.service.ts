@@ -22,7 +22,6 @@ export class InfoconsoService {
 
 
   async getBalances(date: String): Promise<Array<Balances>> {
-    console.log(date)
     const options = {
       headers: {
         "Content-Type": "application/json"

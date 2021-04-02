@@ -25,6 +25,11 @@
               Kabs
           </ion-item>
 
+          <ion-item [routerLink]="['/messages']" routerDirection="forward">
+            <ion-icon name="planet-outline" slot="start"></ion-icon>
+              Message opérateur
+          </ion-item>
+
           <ion-item [routerLink]="['/appel']" routerDirection="forward">
             <ion-icon name="call-outline" slot="start"></ion-icon>
               Appel
@@ -42,6 +47,9 @@
             <ion-icon name="information-circle-outline" slot="start"></ion-icon>
               Consommation
           </ion-item>
+
+         
+
           <ion-item [routerLink]="['/auth']" routerDirection="forward">
             <ion-icon name="settings-outline" slot="start"></ion-icon>
               Paramètres

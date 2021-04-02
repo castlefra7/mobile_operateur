@@ -23,7 +23,6 @@ export class AuthService {
         "Content-Type": "application/json"
       },
     };
-    console.log(environment.url);
     const response = await this.http.get<HttpResponseBody>(`${environment.url}/phone_exists?phone_number=${phone_number}`, options).toPromise();
     const result = await new Promise((resolve, reject) => {
       if (response.status?.code == 200) {

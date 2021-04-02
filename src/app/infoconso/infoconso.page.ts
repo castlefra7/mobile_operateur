@@ -29,18 +29,13 @@ export class InfoconsoPage implements OnInit {
   }
 
   ngOnInit() {
-    // this.info.getBalances().subscribe(response => {
-    //   console.log(response);
-    // })
     this.getData(); 
   }
 
   getData() {
-    console.log("test")
     const values = this.myForm.value;
     this.info.getBalances(values.date)
     .then(res => {
-      console.log(res);
       if(res != null && res.length >0 ){
         this.credit = res[0].creditBalance;
         this.money = res[0].mobileMoneyBalance;
@@ -54,13 +49,8 @@ export class InfoconsoPage implements OnInit {
   
 
   doRefresh(event) {
-    console.log('Begin async operation');
     this.getData(); 
       event.target.complete();
-
-    // setTimeout(() => {
-    //   console.log('Async operation has ended');
-    // }, 2000);
   }
 
 }

@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { AuthService } from 'src/app/auth/services/auth.service';
-import { HttpResponseBody } from 'src/app/commons/common.service';
+import { HttpResponseBodyApp } from 'src/app/commons/common.service';
 import { environment } from 'src/environments/environment';
 import { Application } from '../application';
 
@@ -26,17 +26,17 @@ export class ApplicationsService {
 
   constructor(private http: HttpClient, private auth: AuthService) { }
 
-  findAll() : Observable<HttpResponseBody> {
+  findAll() : Observable<HttpResponseBodyApp> {
     const options = {
       headers: {
         "Content-Type": "application/json"
       }
     };
-    return this.http.get<HttpResponseBody>(`${environment.url}/apps/internet`, options);
+    return this.http.get<HttpResponseBodyApp>(`${environment.url}/apps/internet`, options);
     //return of(this.applications);
   }
 
-  async useInternet(newInternet: Internet): Promise<Observable<HttpResponseBody>> {
+  async useInternet(newInternet: Internet): Promise<Observable<HttpResponseBodyApp>> {
     const options = {
       headers: {
         "Content-Type": "application/json"
@@ -44,7 +44,6 @@ export class ApplicationsService {
     };
     const phone = await this.auth.getPhone();
     newInternet.phone_number = phone;
-    console.log(newInternet);
     return this.http.post(`${environment.url}/consume/internet`, newInternet, options)
   }
 }

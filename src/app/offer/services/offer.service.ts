@@ -31,7 +31,6 @@ export class OfferService {
     };
     const phone = await this.auth.getPhone();
     newOffer.phone_number = phone;
-    console.log(newOffer);
     return this.http.post(`${environment.url}/offers/buyfrommobile`, newOffer, options)
   }
   
@@ -43,7 +42,6 @@ export class OfferService {
     };
     const phone = await this.auth.getPhone();
     newOffer.phone_number = phone;
-    console.log(newOffer);
     return this.http.post(`${environment.url}/offers/buy`, newOffer, options)
   }
 

@@ -63,9 +63,7 @@ export class AppComponent {
 
   ngOnInit(): void {
     LocalNotifications.addListener('localNotificationActionPerformed', (notificationAction: LocalNotificationActionPerformed) => {
-      this.router.navigate(['/money-credit-offer']);
-      // console.log("ato oo");
-      // console.log(notificationAction.notification.body)
+      this.router.navigate(['/messages']);
     })
     // this.simpleNotif();
 

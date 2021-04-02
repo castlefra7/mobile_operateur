@@ -18,6 +18,7 @@ import { PhotoModule } from './photo/photo.module';
 // import { AngularFireModule } from '@angular/fire';
 // import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AuthModule } from './auth/auth.module';
+import { ListMessagesModule } from './list-messages/list-messages.module';
 // import { LocalNotifications} from '@ionic-native/local-notifications/ngx'
 
 // export const firebaseConfig = {
@@ -47,7 +48,7 @@ import { AuthModule } from './auth/auth.module';
   imports: [BrowserModule, IonicModule, IonicModule.forRoot(), AppRoutingModule,
     MobileMoneyModule, MessagePageModule, CreditModule, AppelPageModule, AppsPageModule, InfoconsoPageModule, PhotoModule,
     // AngularFireModule.initializeApp(firebaseConfig), AngularFireDatabaseModule, 
-    AuthModule 
+    AuthModule,ListMessagesModule
   ],
   providers: [
     StatusBar,

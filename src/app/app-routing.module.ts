@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth-guard';
 
 const routes: Routes = [
+
   {
     path: '',
     redirectTo: 'auth',
@@ -56,8 +57,12 @@ const routes: Routes = [
     path: 'credit',
     loadChildren: () => import('./credit/credit.module').then(m => m.CreditModule),
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'messages',
+    loadChildren: () => import('./list-messages/list-messages.module').then(m => m.ListMessagesModule),
+    canActivate: [AuthGuard]
   }
-
 
 
 ];

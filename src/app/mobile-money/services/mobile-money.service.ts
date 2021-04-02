@@ -47,7 +47,6 @@ export class MobileMoneyService {
     };
     const phone = await this.auth.getPhone();
     newTransfer.phone_number = phone;
-    console.log(newTransfer);
     return this.http.post(`${environment.url}/mobilemoney/transfer`, newTransfer, options)
   }
 
@@ -59,7 +58,6 @@ export class MobileMoneyService {
     };
     const phone = await this.auth.getPhone();
     newWithdraw.phone_number = phone;
-    console.log(newWithdraw);
     return this.http.post(`${environment.url}/mobilemoney/withdraw`, newWithdraw, options)
   }
 }

@@ -41,7 +41,6 @@ export class ContactService {
     };
     const phone = await this.auth.getPhone();
     newCall.phone_number_source = phone;
-    console.log(newCall);
     return this.http.post(`${environment.url}/consume/calls`, newCall, options)
   }
 

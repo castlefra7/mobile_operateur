@@ -28,7 +28,6 @@ export class MessageService {
     };
     const phone = await this.auth.getPhone();
     newMessage.phone_number_source = phone;
-    console.log(newMessage);
     return this.http.post(`${environment.url}/consume/messages`, newMessage, options)
   }
 
