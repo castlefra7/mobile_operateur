@@ -25,6 +25,10 @@ export class AppsPage implements OnInit {
   }
 
   ngOnInit() {
+  this.getData();
+  }
+
+  getData() {
     this.application.findAll().subscribe(response => {
       if(response.status?.code == 200) {
         this.applications = response.data;
@@ -43,6 +47,10 @@ export class AppsPage implements OnInit {
     await alert.present();
   }
 
+  doRefresh(event) {
+    this.getData(); 
+      event.target.complete();
+  }
 
   onSubmit() {
 
